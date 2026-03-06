@@ -73,8 +73,9 @@ export class OpenaiService {
   ) {
     this.client = new OpenAI({
       apiKey: this.configService.get('OPENAI_API_KEY'),
+      baseURL: 'https://api.groq.com/openai/v1',
     });
-    this.model = this.configService.get('OPENAI_MODEL', 'gpt-3.5-turbo');
+    this.model = this.configService.get('OPENAI_MODEL', 'llama-3.3-70b-versatile');
   }
 
   /**
